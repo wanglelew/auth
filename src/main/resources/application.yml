@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: wll2001
+    url: jdbc:mysql://49.232.185.35/videoblog-usercenter?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+  cloud: #设置springcould与nacos的通信
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        username: nacos
+        password: nacos
+  application:
+    name: auth-service
+  jackson:
+    default-property-inclusion: non_null
+server:
+  port: 2300
+mybatis:
+  config-location: classpath:/db/mybatis-config.xml
+
+#jwt自定义密钥
+app:
+  secretKey: 1234567890_1234567890_1234567890
